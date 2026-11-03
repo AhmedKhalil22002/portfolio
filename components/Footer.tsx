@@ -1,7 +1,13 @@
+"use client";
+
 import { Terminal, ArrowUp, Mail, Phone } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { useSite } from "@/context/SiteContext";
 
 export default function Footer() {
+  const { t } = useSite();
+  const f = t.footer;
+  const nav = t.nav;
   const currentYear = 2026;
 
   return (
@@ -19,31 +25,17 @@ export default function Footer() {
               </div>
               <span className="font-bold text-lg text-white">Ahmed Khalil</span>
             </a>
-            <p className="text-xs text-slate-400 max-w-sm">
-              Computer Science Engineering Student • ESPRIT • Electronics & Automation • Client-Centric Problem Solver
-            </p>
+            <p className="text-xs text-slate-400 max-w-sm">{f.tagline}</p>
           </div>
 
           {/* Quick Nav Anchors */}
           <div className="flex flex-wrap justify-center gap-6 text-xs text-slate-400">
-            <a href="#about" className="hover:text-cyan-400 transition-colors">
-              About
-            </a>
-            <a href="#experience" className="hover:text-cyan-400 transition-colors">
-              Experience
-            </a>
-            <a href="#education" className="hover:text-cyan-400 transition-colors">
-              Education
-            </a>
-            <a href="#skills" className="hover:text-cyan-400 transition-colors">
-              Skills
-            </a>
-            <a href="#certifications" className="hover:text-cyan-400 transition-colors">
-              Certifications
-            </a>
-            <a href="#contact" className="hover:text-cyan-400 transition-colors">
-              Contact
-            </a>
+            <a href="#about" className="hover:text-cyan-400 transition-colors">{nav.about}</a>
+            <a href="#experience" className="hover:text-cyan-400 transition-colors">{nav.experience}</a>
+            <a href="#education" className="hover:text-cyan-400 transition-colors">{nav.education}</a>
+            <a href="#skills" className="hover:text-cyan-400 transition-colors">{nav.skills}</a>
+            <a href="#certifications" className="hover:text-cyan-400 transition-colors">{nav.certifications}</a>
+            <a href="#contact" className="hover:text-cyan-400 transition-colors">{nav.contact}</a>
           </div>
 
           {/* Back to Top */}
@@ -52,7 +44,7 @@ export default function Footer() {
               href="#"
               className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] hover:bg-cyan-500/10 border border-white/10 hover:border-cyan-500/30 text-slate-300 hover:text-cyan-300 text-xs font-medium transition-all"
             >
-              <span>Back to Top</span>
+              <span>{f.backToTop}</span>
               <ArrowUp className="size-3.5" />
             </a>
           </div>
@@ -61,7 +53,7 @@ export default function Footer() {
         {/* Bottom Credits & Legal */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {currentYear} Ahmed Khalil. All rights reserved.
+            © {currentYear} Ahmed Khalil. {f.rights}
           </div>
 
           <div className="flex items-center gap-4">
@@ -99,9 +91,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="text-[11px] text-slate-400 font-mono">
-            Built with Next.js 16, Tailwind CSS v4 & Motion
-          </div>
+          <div className="text-[11px] text-slate-400 font-mono">{f.builtWith}</div>
         </div>
       </div>
     </footer>

@@ -8,80 +8,13 @@ import {
   Building2,
   CheckCircle2,
 } from "lucide-react";
-
-const EXPERIENCES = [
-  {
-    role: "Engineering Intern – Intelligent Technologies",
-    company: "Bionic Soul",
-    location: "Technopole El Ghazela, Ariana",
-    period: "15 June 2025 – 30 August 2025",
-    duration: "2.5 Months",
-    type: "Technology Internship",
-    summary:
-      "Contributed to an innovative project in the intelligent technologies domain, developing sharp analysis capabilities and exacting attention to detail.",
-    responsibilities: [
-      "Conducted extensive data collection and systematic processing to engineer a dependable, highly-adapted system.",
-      "Identified and mitigated technical anomalies, strengthening overall system accuracy.",
-      "Reinforced analytical rigor, proactive problem-solving, and cross-functional technical adaptability.",
-    ],
-    skills: [
-      "Intelligent Technologies",
-      "Data Collection & Processing",
-      "Analytical Rigor",
-      "System Reliability",
-      "Problem Solving",
-    ],
-    badgeColor: "from-cyan-500 to-blue-600",
-  },
-  {
-    role: "IT & Workflow Digitization Intern",
-    company: "Tunisair",
-    location: "Charguia 2, Tunis",
-    period: "15 July 2024 – 30 August 2024",
-    duration: "6 Weeks",
-    type: "Process Digitization",
-    summary:
-      "Focused on enhancing internal working conditions and operational productivity by digitizing employee request management.",
-    responsibilities: [
-      "Engineered and deployed an intuitive online form system that superseded manual paper-based processes.",
-      "Facilitated smoother request handling, accelerating response times and improving employee experience.",
-      "Strengthened personal autonomy, organizational rigor, and adherence to enterprise compliance standards.",
-    ],
-    skills: [
-      "Online Form Systems",
-      "Workflow Digitization",
-      "Employee Support",
-      "Process Optimization",
-      "Autonomous Management",
-    ],
-    badgeColor: "from-blue-500 to-indigo-600",
-  },
-  {
-    role: "End-of-Studies Automation Intern",
-    company: "STIR (Société Tunisienne des Industries de Raffinage)",
-    location: "Bizerte, Tunisia",
-    period: "January 2023 – May 2023",
-    duration: "6 Months",
-    type: "Industrial Engineering",
-    summary:
-      "Completed a comprehensive 6-month end-of-studies internship in a rigorous industrial environment, operating with high responsibility.",
-    responsibilities: [
-      "Actively contributed to program development and parameter configuration for a Siemens API / industrial controller.",
-      "Adapted to strict safety, industrial quality protocols, and mission-critical operating environments.",
-      "Solidified fundamental engineering practices, methodical troubleshooting, and industrial teamwork.",
-    ],
-    skills: [
-      "Siemens API",
-      "Industrial Automation",
-      "Controller Programming",
-      "Structured Enterprise",
-      "Industrial Protocols",
-    ],
-    badgeColor: "from-indigo-500 to-purple-600",
-  },
-];
+import { useSite } from "@/context/SiteContext";
+import { cn } from "@/lib/utils";
 
 export default function Experience() {
+  const { t, theme } = useSite();
+  const e = t.experience;
+
   return (
     <section id="experience" className="py-24 relative overflow-hidden">
       {/* Background radial accent */}
@@ -92,17 +25,15 @@ export default function Experience() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
             <Briefcase className="size-3.5" />
-            <span>Practical Experience</span>
+            <span>{e.sectionLabel}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            Work &{" "}
+            {e.headline}{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-              Internship History
+              {e.headlineAccent}
             </span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300">
-            Proven track record of autonomy, rapid assimilation, and valuable contributions across innovative tech, airline operations, and heavy industrial automation.
-          </p>
+          <p className="mt-4 text-base sm:text-lg text-slate-300">{e.subtitle}</p>
         </div>
 
         {/* Timeline Container */}
@@ -111,7 +42,7 @@ export default function Experience() {
           <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-cyan-500 via-blue-500 to-indigo-600/20" />
 
           <div className="space-y-12">
-            {EXPERIENCES.map((exp, idx) => {
+            {e.items.map((exp, idx) => {
               const isEven = idx % 2 === 0;
               return (
                 <div
@@ -119,19 +50,20 @@ export default function Experience() {
                   className="relative flex flex-col md:flex-row items-center"
                 >
                   {/* Timeline Center Node (Desktop) */}
-                  <div className="hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 items-center justify-center size-8 rounded-full bg-[#0B0F19] border-2 border-cyan-400 shadow-md shadow-cyan-500/40 z-20">
+                  <div className={cn(
+                    "hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 items-center justify-center size-8 rounded-full border-2 border-cyan-400 shadow-md shadow-cyan-500/40 z-20",
+                    theme === "light" ? "bg-slate-100" : "bg-[#0B0F19]"
+                  )}>
                     <span className="size-2 rounded-full bg-cyan-400 animate-pulse" />
                   </div>
 
-                  {/* Card Content with Left/Right Alternation on Desktop */}
+                  {/* Card */}
                   <motion.div
                     initial={{ opacity: 0, x: isEven ? -40 : 40, y: 20 }}
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    className={`w-full md:w-[calc(50%-2.5rem)] ${
-                      isEven ? "md:mr-auto" : "md:ml-auto"
-                    }`}
+                    className={`w-full md:w-[calc(50%-2.5rem)] ${isEven ? "md:mr-auto" : "md:ml-auto"}`}
                   >
                     <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/10 transition-all group">
                       {/* Top Badges */}
@@ -165,9 +97,7 @@ export default function Experience() {
                       </div>
 
                       {/* Summary */}
-                      <p className="text-slate-300 text-sm leading-relaxed mb-5">
-                        {exp.summary}
-                      </p>
+                      <p className="text-slate-300 text-sm leading-relaxed mb-5">{exp.summary}</p>
 
                       {/* Key Responsibilities */}
                       <div className="space-y-2 mb-6">

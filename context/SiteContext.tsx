@@ -74,3 +74,4 @@ export function useSite(): SiteContextValue {
   if (!ctx) throw new Error("useSite must be used inside <SiteProvider>");
   return ctx;
 }
+

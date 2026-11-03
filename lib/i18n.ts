@@ -17,6 +17,7 @@ export const translations = {
 
     // Hero
     hero: {
+      greeting: "Hi, I'm",
       welcome: "Welcome to my official portfolio",
       location: "Ariana / Bizerte, Tunisia",
       scrollDown: "Scroll Down",
@@ -461,6 +462,88 @@ export const translations = {
       awards: "Awards",
       hackathons: "Hackathons",
       competitions: "Competitions",
+      items: [
+        {
+          id: "bal-esprit",
+          title: "Best Project of the Year Recognition",
+          organization: "Bal des Projets ESPRIT 2025",
+          type: "Award",
+          badge: "Official Honors",
+          description:
+            "Honored as one of the standout, highest-caliber engineering projects of the entire academic year at ESPRIT.",
+          topics: ["Project Excellence", "Software Engineering", "Innovation", "System Integration"],
+        },
+        {
+          id: "nvidia-anomaly",
+          title: "AI Applications & Anomaly Detection",
+          organization: "NVIDIA Deep Learning Institute",
+          type: "Certification",
+          badge: "NVIDIA Certified",
+          description:
+            "Advanced certification on applying deep neural networks for anomaly detection in real-world sensor and visual datasets.",
+          topics: ["Deep Learning", "Anomaly Detection", "Computer Vision", "Model Evaluation"],
+        },
+        {
+          id: "nvidia-genai",
+          title: "Generative AI with Diffusion Models",
+          organization: "NVIDIA Deep Learning Institute",
+          type: "Certification",
+          badge: "NVIDIA Certified",
+          description:
+            "Specialized training in generative artificial intelligence architectures, denoising diffusion probabilistic models, and prompting frameworks.",
+          topics: ["Generative AI", "Diffusion Models", "Latent Space", "Prompt Engineering"],
+        },
+        {
+          id: "nvidia-maintenance",
+          title: "AI Applications for Predictive Maintenance",
+          organization: "NVIDIA Deep Learning Institute",
+          type: "Certification",
+          badge: "NVIDIA Certified",
+          description:
+            "Industrial AI specialization on predictive maintenance, sensor stream processing, failure mode forecasting, and machine health telemetry.",
+          topics: ["Predictive Maintenance", "Industrial AI", "Time-Series Telemetry", "Failure Prediction"],
+        },
+        {
+          id: "aws-cloud",
+          title: "AWS Academy Graduate – Cloud Foundations",
+          organization: "Amazon Web Services (AWS Academy)",
+          type: "Certification",
+          badge: "AWS Training Badge",
+          description:
+            "Comprehensive certification on AWS cloud architecture, compute (EC2), storage (S3), IAM security, and reliable cloud design principles.",
+          topics: ["Cloud Architecture", "AWS Cloud Foundations", "Cloud Security", "Infrastructure"],
+        },
+        {
+          id: "hashgraph-dev",
+          title: "Hashgraph Developer Course",
+          organization: "The Hashgraph Association",
+          type: "Certification",
+          badge: "DLT Certified",
+          description:
+            "Developer certification in distributed ledger technology (DLT), Hedera Hashgraph consensus algorithms, and decentralized application fundamentals.",
+          topics: ["Hashgraph Consensus", "DLT & Web3", "Smart Contracts", "Decentralized Systems"],
+        },
+        {
+          id: "ieee-hackathon",
+          title: "Hackathon Engineering Challenge",
+          organization: "IEEE FSB Bizerte Student Branch",
+          type: "Hackathon",
+          badge: "IEEE Participant",
+          description:
+            "Intensive collaborative hackathon tackling algorithmic problems and rapid prototyping under high-pressure competitive conditions.",
+          topics: ["Rapid Prototyping", "Team Hackathon", "Problem Solving", "IEEE Engineering"],
+        },
+        {
+          id: "smartech-robotics",
+          title: "National Robotics Event – Sousse",
+          organization: "Club Smartech",
+          type: "Competition",
+          badge: "Robotics Contest",
+          description:
+            "Inter-collegiate robotics competition requiring autonomous navigation, microcontroller coding, and real-time sensor processing.",
+          topics: ["Autonomous Robotics", "Embedded Systems", "Sensor Fusion", "Team Competition"],
+        },
+      ],
     },
 
     // Contact
@@ -525,6 +608,7 @@ export const translations = {
 
     // Hero
     hero: {
+      greeting: "Bonjour, je suis",
       welcome: "Bienvenue sur mon portfolio officiel",
       location: "Ariana / Bizerte, Tunisie",
       scrollDown: "Défiler",
@@ -966,6 +1050,88 @@ export const translations = {
       awards: "Distinctions",
       hackathons: "Hackathons",
       competitions: "Compétitions",
+      items: [
+        {
+          id: "bal-esprit",
+          title: "Prix de Reconnaissance du Meilleur Projet",
+          organization: "Bal des Projets ESPRIT 2025",
+          type: "Award",
+          badge: "Honneurs Officiels",
+          description:
+            "Distingue l'un des projets d'ingénierie les plus remarquables et de plus haut calibre de toute l'année académique à l'ESPRIT.",
+          topics: ["Excellence de Projet", "Génie Logiciel", "Innovation", "Intégration Systèmes"],
+        },
+        {
+          id: "nvidia-anomaly",
+          title: "Applications de l'IA et Détection d'Anomalies",
+          organization: "NVIDIA Deep Learning Institute",
+          type: "Certification",
+          badge: "Certifié NVIDIA",
+          description:
+            "Certification avancée sur l'application des réseaux de neurones profonds pour la détection d'anomalies dans des jeux de données réels.",
+          topics: ["Deep Learning", "Détection d'Anomalies", "Vision par Ordinateur", "Évaluation de Modèles"],
+        },
+        {
+          id: "nvidia-genai",
+          title: "IA Générative avec les Modèles de Diffusion",
+          organization: "NVIDIA Deep Learning Institute",
+          type: "Certification",
+          badge: "Certifié NVIDIA",
+          description:
+            "Formation spécialisée dans les architectures d'intelligence artificielle générative, les modèles de diffusion et le prompt engineering.",
+          topics: ["IA Générative", "Modèles de Diffusion", "Espace Latent", "Ingénierie de Prompts"],
+        },
+        {
+          id: "nvidia-maintenance",
+          title: "Applications de l'IA pour la Maintenance Prédictive",
+          organization: "NVIDIA Deep Learning Institute",
+          type: "Certification",
+          badge: "Certifié NVIDIA",
+          description:
+            "Spécialisation IA industrielle sur la maintenance prédictive, l'analyse de télémétrie de capteurs et la prévision des pannes.",
+          topics: ["Maintenance Prédictive", "IA Industrielle", "Télémétrie Séries Temporelles", "Prédiction de Pannes"],
+        },
+        {
+          id: "aws-cloud",
+          title: "Diplômé AWS Academy – Fondamentaux Cloud",
+          organization: "Amazon Web Services (AWS Academy)",
+          type: "Certification",
+          badge: "Badge Formation AWS",
+          description:
+            "Certification complète sur l'architecture cloud AWS, les services EC2, le stockage S3, la sécurité IAM et la haute disponibilité.",
+          topics: ["Architecture Cloud", "Fondamentaux AWS", "Sécurité Cloud", "Infrastructure"],
+        },
+        {
+          id: "hashgraph-dev",
+          title: "Cours Développeur Hashgraph",
+          organization: "The Hashgraph Association",
+          type: "Certification",
+          badge: "Certifié DLT",
+          description:
+            "Certification développeur en technologies de registres distribués (DLT), algorithmes de consensus Hedera Hashgraph et dApps.",
+          topics: ["Consensus Hashgraph", "DLT & Web3", "Smart Contracts", "Systèmes Décentralisés"],
+        },
+        {
+          id: "ieee-hackathon",
+          title: "Défi Hackathon Ingénierie",
+          organization: "IEEE FSB Bizerte Student Branch",
+          type: "Hackathon",
+          badge: "Participant IEEE",
+          description:
+            "Hackathon d'ingénierie intensif résolvant des problématiques algorithmiques complexes et prototypage rapide sous haute pression.",
+          topics: ["Prototypage Rapide", "Hackathon d'Équipe", "Résolution de Problèmes", "Ingénierie IEEE"],
+        },
+        {
+          id: "smartech-robotics",
+          title: "Événement National de Robotique – Sousse",
+          organization: "Club Smartech",
+          type: "Competition",
+          badge: "Concours Robotique",
+          description:
+            "Compétition interuniversitaire de robotique nécessitant navigation autonome, programmation de microcontrôleurs et fusion de capteurs.",
+          topics: ["Robotique Autonome", "Systèmes Embarqués", "Fusion de Capteurs", "Compétition d'Équipe"],
+        },
+      ],
     },
 
     // Contact

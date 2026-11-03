@@ -14,57 +14,14 @@ import {
   MapPin,
   Sparkles,
 } from "lucide-react";
+import { useSite } from "@/context/SiteContext";
 
-const HIGHLIGHTS = [
-  {
-    icon: Headphones,
-    title: "Client Relations & Active Listening",
-    description:
-      "Comfortable in client interactions, attentive to customer needs, and committed to delivering high-satisfaction outcomes.",
-    color: "from-cyan-500 to-blue-500",
-  },
-  {
-    icon: Sparkles,
-    title: "Rapid Problem Analysis",
-    description:
-      "Quickly grasps complex challenges and formulates tailored, efficient solutions in fast-paced environments.",
-    color: "from-blue-500 to-indigo-500",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Rigorous & Organized",
-    description:
-      "Demonstrated discipline in structured enterprise settings, combining technical autonomy with methodical execution.",
-    color: "from-indigo-500 to-purple-500",
-  },
-];
-
-const LANGUAGES = [
-  { name: "Arabic", level: "Native / Mother Tongue", percent: 100 },
-  { name: "French", level: "Fluent (Courant)", percent: 95 },
-  { name: "English", level: "Fluent (Courant)", percent: 90 },
-];
-
-const ENGAGEMENTS = [
-  {
-    role: "Active Member",
-    organization: "Club Smartech – FSB Bizerte",
-    details: "Engaged in robotics development, team competitions, and tech workshops.",
-  },
-  {
-    role: "Member & Participant",
-    organization: "IEEE FSB Bizerte Student Branch",
-    details: "Involved in technical hackathons, professional networking, and engineering initiatives.",
-  },
-];
-
-const SPORTS = [
-  { name: "Chess", label: "Strategic thinking & foresight", icon: "♟️" },
-  { name: "Football", label: "Team cohesion & agility", icon: "⚽" },
-  { name: "Table Tennis", label: "Focus & quick reflexes", icon: "🏓" },
-];
+const HIGHLIGHT_ICONS = [Headphones, Sparkles, HeartHandshake];
 
 export default function About() {
+  const { t } = useSite();
+  const a = t.about;
+
   return (
     <section id="about" className="py-24 relative overflow-hidden">
       {/* Background radial gradient */}
@@ -75,17 +32,15 @@ export default function About() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
             <User className="size-3.5" />
-            <span>About Ahmed</span>
+            <span>{a.sectionLabel}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            Engineering Mindset.{" "}
+            {a.headline}{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Client-First Heart.
+              {a.headlineAccent}
             </span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300">
-            Bridging technical precision in computer engineering with strong interpersonal and listening skills to deliver world-class client satisfaction.
-          </p>
+          <p className="mt-4 text-base sm:text-lg text-slate-300">{a.subtitle}</p>
         </div>
 
         {/* Main Bio Grid */}
@@ -99,47 +54,25 @@ export default function About() {
             className="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 border border-white/10"
           >
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-cyan-400">Professional</span> Summary
+              <span className="text-cyan-400">{a.professionalSummaryTitle.split(" ")[0]}</span>{" "}
+              {a.professionalSummaryTitle.split(" ").slice(1).join(" ")}
             </h3>
-            
-            <p className="text-slate-300 text-base leading-relaxed mb-6">
-              Engineering student in computer science, equipped with excellent communication skills and a deep ability to actively listen and understand client requirements. Motivated, dynamic, and naturally comfortable in interpersonal and client-facing interactions.
-            </p>
 
-            <p className="text-slate-300 text-base leading-relaxed mb-8">
-              Serious and organized, with a clear aspiration to put strong relational capabilities at the service of a customer call center or tech support environment, continually striving to elevate client satisfaction in a structured and professional atmosphere.
-            </p>
+            <p className="text-slate-300 text-base leading-relaxed mb-6">{a.bio1}</p>
+            <p className="text-slate-300 text-base leading-relaxed mb-8">{a.bio2}</p>
 
             {/* Core Competencies Checklist */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-white/10">
-              <div className="flex items-center gap-2.5 text-slate-200 text-sm">
-                <CheckCircle2 className="size-4 text-cyan-400 shrink-0" />
-                <span>Active listening & empathy</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-slate-200 text-sm">
-                <CheckCircle2 className="size-4 text-cyan-400 shrink-0" />
-                <span>Fast & precise data entry</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-slate-200 text-sm">
-                <CheckCircle2 className="size-4 text-cyan-400 shrink-0" />
-                <span>Rapid problem deconstruction</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-slate-200 text-sm">
-                <CheckCircle2 className="size-4 text-cyan-400 shrink-0" />
-                <span>Professional email communication</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-slate-200 text-sm">
-                <CheckCircle2 className="size-4 text-cyan-400 shrink-0" />
-                <span>Calm under operational pressure</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-slate-200 text-sm">
-                <CheckCircle2 className="size-4 text-cyan-400 shrink-0" />
-                <span>Client-satisfaction dedication</span>
-              </div>
+              {a.competencies.map((item) => (
+                <div key={item} className="flex items-center gap-2.5 text-slate-200 text-sm">
+                  <CheckCircle2 className="size-4 text-cyan-400 shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Right Column: Quick Contact Info Card */}
+          {/* Right Column */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -151,7 +84,7 @@ export default function About() {
             <div className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/10">
               <h4 className="text-base font-semibold text-white mb-4 flex items-center gap-2">
                 <MapPin className="size-4 text-cyan-400" />
-                <span>Personal Information</span>
+                <span>{a.personalInfo}</span>
               </h4>
 
               <div className="space-y-4 text-sm">
@@ -160,7 +93,7 @@ export default function About() {
                     <User className="size-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 block">Full Name</span>
+                    <span className="text-xs text-slate-400 block">{a.fullName}</span>
                     <span className="text-slate-100 font-medium">Ahmed Khalil</span>
                   </div>
                 </div>
@@ -170,7 +103,7 @@ export default function About() {
                     <Mail className="size-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 block">Email Address</span>
+                    <span className="text-xs text-slate-400 block">{a.emailAddress}</span>
                     <a
                       href="mailto:Khalilahmed22002@gmail.com"
                       className="text-cyan-400 hover:underline font-mono text-xs sm:text-sm break-all"
@@ -185,7 +118,7 @@ export default function About() {
                     <Phone className="size-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 block">Phone Number</span>
+                    <span className="text-xs text-slate-400 block">{a.phoneNumber}</span>
                     <a
                       href="tel:+21654140550"
                       className="text-slate-100 hover:text-cyan-400 font-mono text-sm"
@@ -200,8 +133,8 @@ export default function About() {
                     <MapPin className="size-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 block">Current Base</span>
-                    <span className="text-slate-100 font-medium">Ariana & Bizerte, Tunisia</span>
+                    <span className="text-xs text-slate-400 block">{a.currentBase}</span>
+                    <span className="text-slate-100 font-medium">Ariana &amp; Bizerte, Tunisia</span>
                   </div>
                 </div>
               </div>
@@ -211,11 +144,11 @@ export default function About() {
             <div className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/10">
               <h4 className="text-base font-semibold text-white mb-4 flex items-center gap-2">
                 <Globe2 className="size-4 text-cyan-400" />
-                <span>Languages</span>
+                <span>{a.languages}</span>
               </h4>
 
               <div className="space-y-4">
-                {LANGUAGES.map((lang) => (
+                {a.langData.map((lang) => (
                   <div key={lang.name}>
                     <div className="flex justify-between items-center text-xs mb-1.5">
                       <span className="font-semibold text-slate-200">{lang.name}</span>
@@ -239,24 +172,32 @@ export default function About() {
 
         {/* 3 Pillars / Highlights */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {HIGHLIGHTS.map((h, i) => (
-            <motion.div
-              key={h.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all hover:-translate-y-1"
-            >
-              <div
-                className={`size-11 rounded-xl bg-gradient-to-tr ${h.color} text-white flex items-center justify-center mb-4 shadow-md`}
+          {a.highlights.map((h, i) => {
+            const IconComp = HIGHLIGHT_ICONS[i];
+            const colors = [
+              "from-cyan-500 to-blue-500",
+              "from-blue-500 to-indigo-500",
+              "from-indigo-500 to-purple-500",
+            ];
+            return (
+              <motion.div
+                key={h.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all hover:-translate-y-1"
               >
-                <h.icon className="size-5" />
-              </div>
-              <h4 className="text-lg font-bold text-white mb-2">{h.title}</h4>
-              <p className="text-slate-300 text-sm leading-relaxed">{h.description}</p>
-            </motion.div>
-          ))}
+                <div
+                  className={`size-11 rounded-xl bg-gradient-to-tr ${colors[i]} text-white flex items-center justify-center mb-4 shadow-md`}
+                >
+                  <IconComp className="size-5" />
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2">{h.title}</h4>
+                <p className="text-slate-300 text-sm leading-relaxed">{h.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Engagements & Interests Row */}
@@ -271,11 +212,11 @@ export default function About() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Users2 className="size-5 text-cyan-400" />
-              <h4 className="text-lg font-bold text-white">Social & Club Engagements</h4>
+              <h4 className="text-lg font-bold text-white">{a.engagementsTitle}</h4>
             </div>
 
             <div className="space-y-4">
-              {ENGAGEMENTS.map((eng) => (
+              {a.engagements.map((eng) => (
                 <div
                   key={eng.organization}
                   className="p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:border-cyan-500/20 transition-all"
@@ -302,11 +243,11 @@ export default function About() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Gamepad2 className="size-5 text-indigo-400" />
-              <h4 className="text-lg font-bold text-white">Sports & Tactical Passions</h4>
+              <h4 className="text-lg font-bold text-white">{a.sportsTitle}</h4>
             </div>
 
             <div className="space-y-3">
-              {SPORTS.map((sport) => (
+              {a.sports.map((sport) => (
                 <div
                   key={sport.name}
                   className="flex items-center gap-4 p-3.5 rounded-xl bg-white/[0.03] border border-white/5 hover:border-indigo-500/20 transition-all"
