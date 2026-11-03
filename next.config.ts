@@ -1,12 +1,15 @@
 import type { NextConfig } from "next";
 
+const isGithubPages = process.env.GITHUB_ACTIONS || process.env.DEPLOY_TARGET === "gh-pages";
+const repoName = "portfolio";
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-    agentFeedback: true,
+  output: "export",
+  basePath: isGithubPages ? `/${repoName}` : undefined,
+  assetPrefix: isGithubPages ? `/${repoName}/` : undefined,
+  images: {
+    unoptimized: true,
   },
-  cacheComponents: true,
-  partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {
