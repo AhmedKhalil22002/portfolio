@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import {
   User,
@@ -20,6 +21,7 @@ const HIGHLIGHT_ICONS = [Headphones, Sparkles, HeartHandshake];
 
 export default function About() {
   const { t } = useSite();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const a = t.about;
 
   return (
@@ -82,6 +84,26 @@ export default function About() {
           >
             {/* Quick Details Card */}
             <div className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/10">
+              {/* Profile Photo Header */}
+              <div className="flex items-center gap-4 pb-5 mb-5 border-b border-white/10">
+                <div className="relative size-16 rounded-2xl p-0.5 bg-gradient-to-tr from-cyan-400 to-blue-500 shadow-md shrink-0">
+                  <div className="size-full rounded-[14px] overflow-hidden bg-slate-900 border border-white/20">
+                    <Image
+                      src={`${basePath}/profile.jpg`}
+                      alt="Ahmed Khalil"
+                      width={64}
+                      height={64}
+                      className="size-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <h5 className="font-bold text-white text-base">Ahmed Khalil</h5>
+                  <p className="text-xs text-cyan-400 font-mono">ESPRIT • Final-Year CS Engineer</p>
+                  <p className="text-[11px] text-slate-400">Electronics &amp; Automation Background</p>
+                </div>
+              </div>
+
               <h4 className="text-base font-semibold text-white mb-4 flex items-center gap-2">
                 <MapPin className="size-4 text-cyan-400" />
                 <span>{a.personalInfo}</span>

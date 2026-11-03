@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import {
   ArrowDown,
@@ -16,6 +17,7 @@ import { useSite } from "@/context/SiteContext";
 
 export default function Hero() {
   const { t } = useSite();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   const phrases = t.hero.typingPhrases as readonly string[];
 
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -69,12 +71,45 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs sm:text-sm font-medium mb-8 backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs sm:text-sm font-medium mb-6 backdrop-blur-md"
           >
             <Sparkles className="size-4 text-cyan-400 animate-spin" style={{ animationDuration: "6s" }} />
             <span>{t.hero.welcome}</span>
             <span className="text-white/30">•</span>
             <span className="text-slate-300">{t.hero.location}</span>
+          </motion.div>
+
+          {/* Profile Picture */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="relative mb-6 group"
+          >
+            {/* Ambient backlight glow */}
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-sky-400 to-blue-600 opacity-60 blur-md group-hover:opacity-100 transition-opacity animate-pulse" />
+
+            {/* Photo ring */}
+            <div className="relative size-32 sm:size-36 rounded-full p-1 bg-gradient-to-tr from-cyan-400 via-sky-300 to-indigo-500 shadow-xl shadow-cyan-500/20">
+              <div className="size-full rounded-full overflow-hidden bg-slate-900 border-2 border-white/20">
+                <Image
+                  src={`${basePath}/profile.jpg`}
+                  alt="Ahmed Khalil"
+                  width={144}
+                  height={144}
+                  priority
+                  className="size-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+
+            {/* Online / Active status badge */}
+            <div
+              className="absolute bottom-1 right-2 size-5 rounded-full bg-emerald-500 border-2 border-[#090D16] shadow-md flex items-center justify-center"
+              title="Available for Opportunities"
+            >
+              <span className="size-2 rounded-full bg-white" />
+            </div>
           </motion.div>
 
           {/* Headline Name */}
