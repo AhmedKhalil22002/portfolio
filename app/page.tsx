@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div id="page-root" className="relative min-h-screen bg-[#090D16] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200 dark:bg-[#090D16] light:bg-[#f0f4f8]">
+    <div id="page-root" className="relative min-h-screen bg-[#0A0E17] text-slate-100 flex flex-col selection:bg-sky-500/25 selection:text-sky-200 dark:bg-[#0A0E17] light:bg-[#f8fafc]">
       {/* Global Navbar */}
       <Navbar />
 

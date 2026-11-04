@@ -15,19 +15,20 @@ export default function Education() {
 
   return (
     <section id="education" className="py-24 relative overflow-hidden bg-white/[0.01]">
-      {/* Background glow orb */}
-      <div className="absolute left-0 bottom-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background ambient lighting */}
+      <div className="absolute left-0 bottom-1/4 w-72 h-72 bg-sky-500/[0.03] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute right-0 top-1/4 w-72 h-72 bg-blue-600/[0.03] rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <GraduationCap className="size-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm backdrop-blur-md">
+            <GraduationCap className="size-3.5 text-sky-400" />
             <span>{e.sectionLabel}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             {e.headline}{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 bg-clip-text text-transparent">
               {e.headlineAccent}
             </span>
           </h2>
@@ -46,15 +47,15 @@ export default function Education() {
               className={`glass-panel rounded-3xl p-6 sm:p-8 border transition-all duration-300 relative ${
                 edu.current
                   ? theme === "light"
-                    ? "border-cyan-500/50 shadow-xl shadow-cyan-500/10 bg-gradient-to-b from-white to-cyan-50/70"
-                    : "border-cyan-500/40 shadow-xl shadow-cyan-500/10 bg-gradient-to-b from-[#0B0F19] to-cyan-950/20"
+                    ? "border-sky-400/50 shadow-lg shadow-sky-500/5 bg-gradient-to-b from-white to-sky-50/50"
+                    : "border-sky-500/30 shadow-lg shadow-black/30 bg-gradient-to-b from-[#0e1422] to-[#0a0d16]"
                   : theme === "light"
-                  ? "border-slate-200 hover:border-cyan-500/40"
-                  : "border-white/10 hover:border-cyan-500/30"
+                  ? "border-slate-200 hover:border-sky-500/30"
+                  : "border-white/10 hover:border-sky-500/25"
               }`}
             >
               {edu.current && (
-                <div className="absolute -top-3 right-6 px-3.5 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold shadow-md shadow-cyan-500/30 flex items-center gap-1.5">
+                <div className="absolute -top-3 right-6 px-3.5 py-1 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 text-white text-xs font-semibold shadow-md shadow-sky-500/20 flex items-center gap-1.5">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
@@ -65,7 +66,7 @@ export default function Education() {
 
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold block mb-1">
+                  <span className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold block mb-1">
                     {edu.tag}
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold text-white">{edu.degree}</h3>
@@ -73,7 +74,7 @@ export default function Education() {
                 </div>
 
                 <div className="flex flex-col sm:items-end gap-1.5 shrink-0">
-                  <div className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-300 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-mono text-sky-300 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20">
                     <Calendar className="size-3.5" />
                     <span>{edu.period}</span>
                   </div>
@@ -97,7 +98,7 @@ export default function Education() {
                       key={lIdx}
                       className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300"
                     >
-                      <CheckCircle2 className="size-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="size-4 text-sky-400 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </div>
                   ))}

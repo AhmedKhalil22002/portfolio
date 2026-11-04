@@ -142,7 +142,7 @@ export const translations = {
             "System Reliability",
             "Problem Solving",
           ],
-          badgeColor: "from-cyan-500 to-blue-600",
+          badgeColor: "from-sky-500 to-blue-600",
         },
         {
           role: "IT & Workflow Digitization Intern",
@@ -165,7 +165,7 @@ export const translations = {
             "Process Optimization",
             "Autonomous Management",
           ],
-          badgeColor: "from-blue-500 to-indigo-600",
+          badgeColor: "from-blue-600 to-indigo-600",
         },
         {
           role: "End-of-Studies Automation Intern",
@@ -188,7 +188,7 @@ export const translations = {
             "Structured Enterprise",
             "Industrial Protocols",
           ],
-          badgeColor: "from-indigo-500 to-purple-600",
+          badgeColor: "from-slate-700 to-slate-800 border border-slate-600",
         },
       ],
     },
@@ -575,11 +575,24 @@ export const translations = {
       messagePlaceholder:
         "Hello Ahmed, we would love to speak with you regarding...",
       transmit: "Transmit Message",
+      sending: "Sending Message...",
       thankYou: "Thank You",
       thankYouMessage:
-        "Your message has been captured. I appreciate your interest and will respond to",
+        "Your message has been sent directly to Ahmed Khalil. A response will be delivered to",
       thankYouSuffix: "as soon as possible.",
       sendAnother: "Send Another Note",
+      errorTitle: "Failed to Send Message",
+      errorMessageText:
+        "An unexpected error occurred while sending your message. You can try again or open your email app directly.",
+      openEmailApp: "Send via Email App",
+      openGmail: "Open in Gmail (Web)",
+      openOutlook: "Open in Outlook (Web)",
+      openDefaultMail: "Open in Mail App",
+      copiedToClipboard: "Copied to clipboard!",
+      messagePrepared: "Message Ready for Ahmed Khalil!",
+      messagePreparedSubtitle:
+        "Your message has been formatted. Choose your preferred email client below to send it to khalil.ahmed22002@gmail.com:",
+      copyFullMessage: "Copy Message Text",
     },
 
     // Footer
@@ -729,7 +742,7 @@ export const translations = {
             "Fiabilité Système",
             "Résolution de Problèmes",
           ],
-          badgeColor: "from-cyan-500 to-blue-600",
+          badgeColor: "from-sky-500 to-blue-600",
         },
         {
           role: "Stagiaire IT & Digitalisation des Flux",
@@ -752,7 +765,7 @@ export const translations = {
             "Optimisation des Processus",
             "Gestion Autonome",
           ],
-          badgeColor: "from-blue-500 to-indigo-600",
+          badgeColor: "from-blue-600 to-indigo-600",
         },
         {
           role: "Stagiaire PFE – Automatisation Industrielle",
@@ -775,7 +788,7 @@ export const translations = {
             "Entreprise Structurée",
             "Protocoles Industriels",
           ],
-          badgeColor: "from-indigo-500 to-purple-600",
+          badgeColor: "from-slate-700 to-slate-800 border border-slate-600",
         },
       ],
     },
@@ -1164,11 +1177,24 @@ export const translations = {
       messagePlaceholder:
         "Bonjour Ahmed, nous aimerions vous parler concernant...",
       transmit: "Envoyer le Message",
+      sending: "Envoi du message...",
       thankYou: "Merci",
       thankYouMessage:
-        "Votre message a été reçu. J'apprécie votre intérêt et vous répondrai à",
+        "Votre message a été envoyé directement à Ahmed Khalil. Une réponse vous parviendra à",
       thankYouSuffix: "dès que possible.",
       sendAnother: "Envoyer une Autre Note",
+      errorTitle: "Échec de l'envoi du message",
+      errorMessageText:
+        "Une erreur inattendue est survenue lors de l'envoi. Vous pouvez réessayer ou ouvrir directement votre boîte mail.",
+      openEmailApp: "Envoyer via Application E-mail",
+      openGmail: "Ouvrir dans Gmail (Web)",
+      openOutlook: "Ouvrir dans Outlook (Web)",
+      openDefaultMail: "Ouvrir l'application e-mail",
+      copiedToClipboard: "Copié dans le presse-papier !",
+      messagePrepared: "Message prêt pour Ahmed Khalil !",
+      messagePreparedSubtitle:
+        "Votre message a été formaté. Choisissez votre client e-mail préféré ci-dessous pour l'envoyer à khalil.ahmed22002@gmail.com :",
+      copyFullMessage: "Copier le texte du message",
     },
 
     // Footer

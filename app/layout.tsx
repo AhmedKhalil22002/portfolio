@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className="min-h-full flex flex-col bg-background text-foreground antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+      <body className="min-h-full flex flex-col bg-background text-foreground antialiased selection:bg-sky-500/20 selection:text-sky-200">
         <SiteProvider>{children}</SiteProvider>
       </body>
     </html>

@@ -17,19 +17,20 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-24 relative overflow-hidden">
-      {/* Background radial accent */}
-      <div className="absolute right-0 top-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background ambient lighting */}
+      <div className="absolute right-0 top-1/3 w-80 h-80 bg-blue-600/[0.03] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute left-0 bottom-10 w-72 h-72 bg-sky-500/[0.03] rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Briefcase className="size-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm backdrop-blur-md">
+            <Briefcase className="size-3.5 text-sky-400" />
             <span>{e.sectionLabel}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             {e.headline}{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 bg-clip-text text-transparent">
               {e.headlineAccent}
             </span>
           </h2>
@@ -39,7 +40,7 @@ export default function Experience() {
         {/* Timeline Container */}
         <div className="relative">
           {/* Vertical Timeline Guide Line */}
-          <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-cyan-500 via-blue-500 to-indigo-600/20" />
+          <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-sky-500/40 via-blue-500/20 to-transparent" />
 
           <div className="space-y-12">
             {e.items.map((exp, idx) => {
@@ -51,10 +52,10 @@ export default function Experience() {
                 >
                   {/* Timeline Center Node (Desktop) */}
                   <div className={cn(
-                    "hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 items-center justify-center size-8 rounded-full border-2 border-cyan-400 shadow-md shadow-cyan-500/40 z-20",
-                    theme === "light" ? "bg-slate-100" : "bg-[#0B0F19]"
+                    "hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 items-center justify-center size-7 rounded-full border border-sky-400/60 shadow-sm shadow-black/20 z-20",
+                    theme === "light" ? "bg-white" : "bg-[#0A0E17]"
                   )}>
-                    <span className="size-2 rounded-full bg-cyan-400 animate-pulse" />
+                    <span className="size-2 rounded-full bg-sky-400" />
                   </div>
 
                   {/* Card */}
@@ -65,7 +66,7 @@ export default function Experience() {
                     transition={{ duration: 0.6, delay: idx * 0.1 }}
                     className={`w-full md:w-[calc(50%-2.5rem)] ${isEven ? "md:mr-auto" : "md:ml-auto"}`}
                   >
-                    <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/10 transition-all group">
+                    <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-sky-500/30 hover:shadow-xl transition-all group">
                       {/* Top Badges */}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                         <span
@@ -73,20 +74,20 @@ export default function Experience() {
                         >
                           {exp.type}
                         </span>
-                        <div className="flex items-center gap-1.5 text-xs text-cyan-400 font-mono">
+                        <div className="flex items-center gap-1.5 text-xs text-sky-400 font-mono">
                           <Calendar className="size-3.5" />
                           <span>{exp.period}</span>
                         </div>
                       </div>
 
                       {/* Role & Company */}
-                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-sky-300 transition-colors">
                         {exp.role}
                       </h3>
 
                       <div className="flex flex-wrap items-center gap-y-1 gap-x-4 text-xs sm:text-sm text-slate-300 mt-2 mb-4">
                         <span className="flex items-center gap-1.5 font-medium text-white">
-                          <Building2 className="size-4 text-cyan-400" />
+                          <Building2 className="size-4 text-sky-400" />
                           {exp.company}
                         </span>
                         <span className="flex items-center gap-1.5 text-slate-400">
@@ -103,7 +104,7 @@ export default function Experience() {
                       <div className="space-y-2 mb-6">
                         {exp.responsibilities.map((resp, rIdx) => (
                           <div key={rIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                            <CheckCircle2 className="size-4 text-cyan-400 shrink-0 mt-0.5" />
+                            <CheckCircle2 className="size-4 text-sky-400 shrink-0 mt-0.5" />
                             <span>{resp}</span>
                           </div>
                         ))}
@@ -114,7 +115,7 @@ export default function Experience() {
                         {exp.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="text-[11px] font-medium px-2.5 py-1 rounded-lg bg-white/[0.04] text-slate-300 border border-white/5 hover:border-cyan-500/30 hover:text-cyan-300 transition-colors"
+                            className="text-[11px] font-medium px-2.5 py-1 rounded-lg bg-white/[0.04] text-slate-300 border border-white/5 hover:border-sky-500/30 hover:text-sky-300 transition-colors"
                           >
                             {skill}
                           </span>

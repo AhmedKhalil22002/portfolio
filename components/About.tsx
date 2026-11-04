@@ -26,19 +26,20 @@ export default function About() {
 
   return (
     <section id="about" className="py-24 relative overflow-hidden">
-      {/* Background radial gradient */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 -left-20 w-80 h-80 bg-sky-500/[0.04] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-80 h-80 bg-blue-600/[0.03] rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <User className="size-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm backdrop-blur-md">
+            <User className="size-3.5 text-sky-400" />
             <span>{a.sectionLabel}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             {a.headline}{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 bg-clip-text text-transparent">
               {a.headlineAccent}
             </span>
           </h2>
@@ -56,7 +57,7 @@ export default function About() {
             className="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 border border-white/10"
           >
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-cyan-400">{a.professionalSummaryTitle.split(" ")[0]}</span>{" "}
+              <span className="text-sky-400">{a.professionalSummaryTitle.split(" ")[0]}</span>{" "}
               {a.professionalSummaryTitle.split(" ").slice(1).join(" ")}
             </h3>
 
@@ -67,7 +68,7 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-white/10">
               {a.competencies.map((item) => (
                 <div key={item} className="flex items-center gap-2.5 text-slate-200 text-sm">
-                  <CheckCircle2 className="size-4 text-cyan-400 shrink-0" />
+                  <CheckCircle2 className="size-4 text-sky-400 shrink-0" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -86,8 +87,8 @@ export default function About() {
             <div className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/10">
               {/* Profile Photo Header */}
               <div className="flex items-center gap-4 pb-5 mb-5 border-b border-white/10">
-                <div className="relative size-16 rounded-2xl p-0.5 bg-gradient-to-tr from-cyan-400 to-blue-500 shadow-md shrink-0">
-                  <div className="size-full rounded-[14px] overflow-hidden bg-slate-900 border border-white/20">
+                <div className="relative size-16 rounded-2xl p-0.5 bg-gradient-to-b from-white/20 via-white/5 to-white/10 shadow-md shrink-0">
+                  <div className="size-full rounded-[14px] overflow-hidden bg-slate-900 border border-white/15">
                     <Image
                       src={`${basePath}/profile.jpg`}
                       alt="Ahmed Khalil"
@@ -99,19 +100,19 @@ export default function About() {
                 </div>
                 <div>
                   <h5 className="font-bold text-white text-base">Ahmed Khalil</h5>
-                  <p className="text-xs text-cyan-400 font-mono">ESPRIT • Final-Year CS Engineer</p>
+                  <p className="text-xs text-sky-400 font-mono">ESPRIT • Final-Year CS Engineer</p>
                   <p className="text-[11px] text-slate-400">Electronics &amp; Automation Background</p>
                 </div>
               </div>
 
               <h4 className="text-base font-semibold text-white mb-4 flex items-center gap-2">
-                <MapPin className="size-4 text-cyan-400" />
+                <MapPin className="size-4 text-sky-400" />
                 <span>{a.personalInfo}</span>
               </h4>
 
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                  <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 mt-0.5">
+                  <div className="p-2 rounded-lg bg-sky-500/10 text-sky-400 mt-0.5">
                     <User className="size-4" />
                   </div>
                   <div>
@@ -127,10 +128,10 @@ export default function About() {
                   <div>
                     <span className="text-xs text-slate-400 block">{a.emailAddress}</span>
                     <a
-                      href="mailto:Khalilahmed22002@gmail.com"
-                      className="text-cyan-400 hover:underline font-mono text-xs sm:text-sm break-all"
+                      href="mailto:khalil.ahmed22002@gmail.com"
+                      className="text-sky-400 hover:text-sky-300 hover:underline font-mono text-xs sm:text-sm break-all"
                     >
-                      Khalilahmed22002@gmail.com
+                      khalil.ahmed22002@gmail.com
                     </a>
                   </div>
                 </div>
@@ -143,7 +144,7 @@ export default function About() {
                     <span className="text-xs text-slate-400 block">{a.phoneNumber}</span>
                     <a
                       href="tel:+21654140550"
-                      className="text-slate-100 hover:text-cyan-400 font-mono text-sm"
+                      className="text-slate-100 hover:text-sky-400 font-mono text-sm"
                     >
                       +216 54140550
                     </a>
@@ -151,7 +152,7 @@ export default function About() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 mt-0.5">
+                  <div className="p-2 rounded-lg bg-slate-800/80 text-slate-300 mt-0.5">
                     <MapPin className="size-4" />
                   </div>
                   <div>
@@ -165,7 +166,7 @@ export default function About() {
             {/* Languages Card */}
             <div className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/10">
               <h4 className="text-base font-semibold text-white mb-4 flex items-center gap-2">
-                <Globe2 className="size-4 text-cyan-400" />
+                <Globe2 className="size-4 text-sky-400" />
                 <span>{a.languages}</span>
               </h4>
 
@@ -182,7 +183,7 @@ export default function About() {
                         whileInView={{ width: `${lang.percent}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
+                        className="h-full bg-gradient-to-r from-sky-400 to-blue-500 rounded-full"
                       />
                     </div>
                   </div>
@@ -196,11 +197,6 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {a.highlights.map((h, i) => {
             const IconComp = HIGHLIGHT_ICONS[i];
-            const colors = [
-              "from-cyan-500 to-blue-500",
-              "from-blue-500 to-indigo-500",
-              "from-indigo-500 to-purple-500",
-            ];
             return (
               <motion.div
                 key={h.title}
@@ -208,10 +204,10 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all hover:-translate-y-1"
+                className="glass-panel rounded-2xl p-6 border border-white/10 hover:border-sky-500/30 hover:shadow-lg transition-all hover:-translate-y-1"
               >
                 <div
-                  className={`size-11 rounded-xl bg-gradient-to-tr ${colors[i]} text-white flex items-center justify-center mb-4 shadow-md`}
+                  className="size-11 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-4 shadow-sm"
                 >
                   <IconComp className="size-5" />
                 </div>
@@ -233,7 +229,7 @@ export default function About() {
             className="glass-panel rounded-2xl p-6 border border-white/10"
           >
             <div className="flex items-center gap-2 mb-4">
-              <Users2 className="size-5 text-cyan-400" />
+              <Users2 className="size-5 text-sky-400" />
               <h4 className="text-lg font-bold text-white">{a.engagementsTitle}</h4>
             </div>
 
@@ -241,11 +237,11 @@ export default function About() {
               {a.engagements.map((eng) => (
                 <div
                   key={eng.organization}
-                  className="p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:border-cyan-500/20 transition-all"
+                  className="p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:border-sky-500/20 transition-all"
                 >
                   <div className="flex items-center justify-between mb-1">
                     <span className="font-semibold text-white text-sm">{eng.organization}</span>
-                    <span className="text-[11px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300">
+                    <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20">
                       {eng.role}
                     </span>
                   </div>
@@ -264,7 +260,7 @@ export default function About() {
             className="glass-panel rounded-2xl p-6 border border-white/10"
           >
             <div className="flex items-center gap-2 mb-4">
-              <Gamepad2 className="size-5 text-indigo-400" />
+              <Gamepad2 className="size-5 text-slate-300" />
               <h4 className="text-lg font-bold text-white">{a.sportsTitle}</h4>
             </div>
 
@@ -272,7 +268,7 @@ export default function About() {
               {a.sports.map((sport) => (
                 <div
                   key={sport.name}
-                  className="flex items-center gap-4 p-3.5 rounded-xl bg-white/[0.03] border border-white/5 hover:border-indigo-500/20 transition-all"
+                  className="flex items-center gap-4 p-3.5 rounded-xl bg-white/[0.03] border border-white/5 hover:border-white/15 transition-all"
                 >
                   <span className="text-2xl">{sport.icon}</span>
                   <div>

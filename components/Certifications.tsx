@@ -23,35 +23,35 @@ const CERT_META: Record<
 > = {
   "bal-esprit": {
     icon: Trophy,
-    gradient: "from-amber-500/20 via-orange-500/10 to-transparent",
+    gradient: "from-amber-400/10 via-yellow-500/5 to-transparent",
   },
   "nvidia-anomaly": {
     icon: ShieldCheck,
-    gradient: "from-emerald-500/20 via-cyan-500/10 to-transparent",
+    gradient: "from-sky-500/10 via-blue-500/5 to-transparent",
   },
   "nvidia-genai": {
     icon: Sparkles,
-    gradient: "from-purple-500/20 via-pink-500/10 to-transparent",
+    gradient: "from-indigo-500/10 via-sky-500/5 to-transparent",
   },
   "nvidia-maintenance": {
     icon: Cpu,
-    gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
+    gradient: "from-slate-400/10 via-sky-500/5 to-transparent",
   },
   "aws-cloud": {
     icon: Cloud,
-    gradient: "from-sky-500/20 via-blue-500/10 to-transparent",
+    gradient: "from-sky-500/10 via-blue-500/5 to-transparent",
   },
   "hashgraph-dev": {
     icon: Network,
-    gradient: "from-indigo-500/20 via-purple-500/10 to-transparent",
+    gradient: "from-blue-500/10 via-indigo-500/5 to-transparent",
   },
   "ieee-hackathon": {
     icon: Bot,
-    gradient: "from-blue-500/20 via-cyan-500/10 to-transparent",
+    gradient: "from-sky-500/10 via-slate-500/5 to-transparent",
   },
   "smartech-robotics": {
     icon: Bot,
-    gradient: "from-teal-500/20 via-cyan-500/10 to-transparent",
+    gradient: "from-teal-500/10 via-sky-500/5 to-transparent",
   },
 };
 
@@ -76,19 +76,19 @@ export default function Certifications() {
 
   return (
     <section id="certifications" className="py-24 relative overflow-hidden bg-white/[0.01]">
-      {/* Background glow orbs */}
-      <div className="absolute left-1/3 top-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background ambient lighting */}
+      <div className="absolute left-1/3 top-1/4 w-80 h-80 bg-blue-600/[0.03] rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Award className="size-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 text-xs font-semibold uppercase tracking-wider mb-3 shadow-sm backdrop-blur-md">
+            <Award className="size-3.5 text-sky-400" />
             <span>{c.sectionLabel}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             {c.headline}{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 bg-clip-text text-transparent">
               {c.headlineAccent}
             </span>
           </h2>
@@ -103,7 +103,7 @@ export default function Certifications() {
               onClick={() => setFilter(tab.key)}
               className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${
                 filter === tab.key
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/20"
+                  ? "bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-md shadow-sky-500/20"
                   : "bg-white/[0.04] text-slate-300 hover:text-white hover:bg-white/[0.08] border border-white/10"
               }`}
             >
@@ -118,7 +118,7 @@ export default function Certifications() {
             {filteredItems.map((item, idx) => {
               const meta = CERT_META[item.id] || {
                 icon: Award,
-                gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
+                gradient: "from-sky-500/10 via-blue-500/5 to-transparent",
               };
               const Icon = meta.icon;
 
@@ -130,7 +130,7 @@ export default function Certifications() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3, delay: idx * 0.05 }}
-                  className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/10 hover:border-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/10 transition-all flex flex-col justify-between group relative overflow-hidden"
+                  className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/10 hover:border-sky-500/30 hover:shadow-xl transition-all flex flex-col justify-between group relative overflow-hidden"
                 >
                   {/* Subtle Card Gradient Glow in top corner */}
                   <div
@@ -141,7 +141,7 @@ export default function Certifications() {
                     {/* Top Row: Type and Badge */}
                     <div className="flex items-center justify-between gap-2 mb-4">
                       <div className="flex items-center gap-2">
-                        <div className="size-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="size-9 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center group-hover:scale-105 transition-transform">
                           <Icon className="size-4.5" />
                         </div>
                         <span className="text-[11px] font-mono uppercase text-slate-400">
@@ -149,13 +149,13 @@ export default function Certifications() {
                         </span>
                       </div>
 
-                      <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/25">
+                      <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20">
                         {item.badge}
                       </span>
                     </div>
 
                     {/* Title & Organization */}
-                    <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-1.5 leading-snug">
+                    <h3 className="text-lg font-bold text-white group-hover:text-sky-300 transition-colors mb-1.5 leading-snug">
                       {item.title}
                     </h3>
 

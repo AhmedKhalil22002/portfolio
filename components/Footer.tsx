@@ -12,15 +12,15 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/10 bg-[#070A11] relative overflow-hidden py-14">
-      {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-cyan-500/5 blur-3xl pointer-events-none" />
+      {/* Background ambient lighting */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-sky-500/[0.02] blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/5">
           {/* Brand Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <a href="#" className="flex items-center gap-2.5 mb-2">
-              <div className="size-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white">
+              <div className="size-8 rounded-lg bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center text-white">
                 <Terminal className="size-4.5" />
               </div>
               <span className="font-bold text-lg text-white">Ahmed Khalil</span>
@@ -30,19 +30,19 @@ export default function Footer() {
 
           {/* Quick Nav Anchors */}
           <div className="flex flex-wrap justify-center gap-6 text-xs text-slate-400">
-            <a href="#about" className="hover:text-cyan-400 transition-colors">{nav.about}</a>
-            <a href="#experience" className="hover:text-cyan-400 transition-colors">{nav.experience}</a>
-            <a href="#education" className="hover:text-cyan-400 transition-colors">{nav.education}</a>
-            <a href="#skills" className="hover:text-cyan-400 transition-colors">{nav.skills}</a>
-            <a href="#certifications" className="hover:text-cyan-400 transition-colors">{nav.certifications}</a>
-            <a href="#contact" className="hover:text-cyan-400 transition-colors">{nav.contact}</a>
+            <a href="#about" className="hover:text-sky-400 transition-colors">{nav.about}</a>
+            <a href="#experience" className="hover:text-sky-400 transition-colors">{nav.experience}</a>
+            <a href="#education" className="hover:text-sky-400 transition-colors">{nav.education}</a>
+            <a href="#skills" className="hover:text-sky-400 transition-colors">{nav.skills}</a>
+            <a href="#certifications" className="hover:text-sky-400 transition-colors">{nav.certifications}</a>
+            <a href="#contact" className="hover:text-sky-400 transition-colors">{nav.contact}</a>
           </div>
 
           {/* Back to Top */}
           <div>
             <a
               href="#"
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] hover:bg-cyan-500/10 border border-white/10 hover:border-cyan-500/30 text-slate-300 hover:text-cyan-300 text-xs font-medium transition-all"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] hover:bg-sky-500/10 border border-white/10 hover:border-sky-500/30 text-slate-300 hover:text-sky-300 text-xs font-medium transition-all"
             >
               <span>{f.backToTop}</span>
               <ArrowUp className="size-3.5" />
@@ -58,15 +58,15 @@ export default function Footer() {
 
           <div className="flex items-center gap-4">
             <a
-              href="mailto:Khalilahmed22002@gmail.com"
-              className="hover:text-cyan-400 transition-colors"
+              href="mailto:khalil.ahmed22002@gmail.com"
+              className="hover:text-sky-400 transition-colors"
               title="Email"
             >
               <Mail className="size-4" />
             </a>
             <a
               href="tel:+21654140550"
-              className="hover:text-cyan-400 transition-colors"
+              className="hover:text-sky-400 transition-colors"
               title="Phone"
             >
               <Phone className="size-4" />
